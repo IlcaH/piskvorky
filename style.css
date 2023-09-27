@@ -82,3 +82,82 @@ p {
   background-color: #0090e9;
   cursor: pointer;
 }
+
+/* ----------------- */
+.hra_box{
+  /* background-repeat: no-repeat;
+  text-align: flex-end; */
+  display: flex;
+  
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 100%;
+  align-items: center;
+}
+
+.hra_nadpis{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.hraci_pole{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+
+}
+
+.radek{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.hraci_pole_policko {
+  border: 0.05rem #2e3c47 solid;
+  height: calc(60vw / 10);
+  width: calc(60vw / 10);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+}
+
+.hraci_pole_policko:hover {
+background-color: rgb(227, 242, 249);
+cursor: pointer;
+}
+
+.hra_podnadpis{
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.hra_text{
+  font-size: 2rem;
+}
+
+.hra_image{
+  height: 2rem;
+  padding: 0 0 0 1.5rem;
+}
+
+.hra_hrac{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+
+.hra_ikony {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+}
+
+.hra-tlacitko {
+  padding: 0.8rem;
+  border-radius: 0%;
+}
+
+.pravidla-tlacitko {
+  padding: 0.8rem;
+}
