@@ -3,21 +3,22 @@
 html {
   font-family: 'Tahoma', sans-serif;
   color: #ffffff;
-  min-height: 100%;
+
 }
 
 body {
-  background: linear-gradient(#615dad, #ffc8da);
-  width: 100vw;
+  background: linear-gradient(#615dad, #ffc8da) no-repeat;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .zacatek {
   display: flex;
-  width: 100vw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .boxik {
@@ -196,15 +197,36 @@ p {
   flex-wrap: nowrap;
 }
 
+.radek1 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .hraci_pole_policko {
   border: 0.05rem #2e3c47 solid;
   height: calc(60vw / 10);
   width: calc(60vw / 10);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(250, 250, 250, 0.5);
   box-sizing: border-box;
 }
 
 .hraci_pole_policko:hover {
-  background-color: rgb(227, 242, 249);
+  background-color: #ffffff;
   cursor: pointer;
+}
+
+
+/* -------- */
+.hraci_pole_policko--kolecko {
+  background-image: url("images/circle_black.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hraci_pole_policko--krizek {
+  background-image: url("images/cross_black.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
