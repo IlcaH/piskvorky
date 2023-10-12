@@ -8,15 +8,38 @@ let hracNaTahu = 'kolecko';
 
 const hracTah = (event) => {
   if (hracNaTahu === 'kolecko') {
-    event.target.classList.add('hraci_pole_policko--kolecko');
+    event.target.classList.toggle('hraci_pole_policko--kolecko');
     event.target.disabled = true;
-    ikonaHracElement.src = 'cross.svg';
+    ikonaHracElement.src = 'images/cross.svg';
     hracNaTahu = 'krizek';
   } else if (hracNaTahu === 'krizek') {
-    event.target.classList.add('hraci_pole_policko--krizek');
+    event.target.classList.toggle('hraci_pole_policko--krizek');
     event.target.disabled = true;
-    ikonaHracElement.src = 'circle.svg';
+    ikonaHracElement.src = 'images/circle.svg';
     hracNaTahu = 'kolecko';
+  }
+
+// 16-25
+  let herniPole = []
+  const kosticky = document.querySelectorAll('.herni_pole_policko')
+  kosticky.forEach(kostka => {
+    let hodnota = kostka.textContent
+    if (hodnota === '') {
+      hodnota = '_'
+    }
+    herniPole.push(hodnota)
+  })
+
+// 29-40
+  const vysledek = findWinner(herniPole)
+  if (vysledek === 'images/circle_black.svg' || vysledek === 'images/cross_black') {
+    conslole.log('vyhrál', vysledek)
+
+  } else if (vysledek === 'tie') {
+    console.log('remiza')
+
+  } else {
+    console.log('zatím nic')
   }
 };
 
@@ -40,4 +63,6 @@ tahElement.forEach((btn) => {
 // document.querySelector('#pole07').addEventListener('click', hracTah);
 // document.querySelector('#pole08').addEventListener('click', hracTah);
 // document.querySelector('#pole09').addEventListener('click', hracTah);
+
+
 
