@@ -61,12 +61,50 @@ if (winner === 'o') {
     alert('Vyhrál křížek!')
     location.reload()
   }, 500)
-} else if (winner === 'tie') {
+}  else if (winner === 'tie') {
   setTimeout(() => {
     alert('Hra skončila remízou!')
     location.reload()
   }, 500)
 }
+
+
+
+// -- posl úkol --
+
+const makeCrossMove = async (array) => {
+  gameBoxes.forEach((button) => {
+    button.disabled = true;
+  });
+
+
+const response = await fetch(
+  'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      board: gameField,
+      player: 'x',
+    }),
+  });
+
+const data = await response.json();
+const { x, y } = data.position;
+const field = gameArrays[x + y * 10];
+
+gameArrays.forEach((array) => {
+  if (
+    !array.classList.contains('hraci_pole_policko--kolecko') &&
+    !array.classList.contains('hraci_pole_policko--krizek')
+  ) {
+    array.disabled = false;
+  }
+});
+
+field.click();
+
 }
-
-
+}
